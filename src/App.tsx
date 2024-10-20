@@ -1,8 +1,19 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import RoutesConfig from './routes/Routes'
+import Footer from './components/Footer'
+import './App.scss'
+import Header from './components/Header'
 
-function App() {
+const App = () => {
   return (
-    <div>App</div>
+    <BrowserRouter>
+      <Header />
+      <main>
+        <RoutesConfig />
+      </main>
+      <Footer />
+    </BrowserRouter>
   )
 }
 

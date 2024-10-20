@@ -1,0 +1,35 @@
+.home-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    height: calc(100% - 120px);
+    justify-content: space-around;
+
+    box-sizing: content-box;
+    overflow-x: auto;
+    padding-bottom: 120px;
+
+    .image {
+        display: flex;
+        
+        img {
+            border-radius: 1.5rem;
+            height: 500px;
+        }
+    }
+
+    .form-container {
+
+        width: 750px;
+
+        .tag {
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-image: linear-gradient(to right, #00F4E2 , #00FF7F);
+        }
+
+        .terms {
+            text-decoration: underline;
+        }
+    }
+}
