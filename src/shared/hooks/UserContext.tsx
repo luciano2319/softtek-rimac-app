@@ -1,6 +1,5 @@
 import { createContext, useContext } from 'react';
 
-// Crea el contexto
 const UserContext = createContext<any>({
   user: null,
   setUser: () => {},

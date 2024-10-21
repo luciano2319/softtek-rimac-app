@@ -10,10 +10,8 @@
     cursor: pointer;
 
     &--header {
-
-        .selected {
-
-        }
+        display: flex;
+        justify-content: flex-end;
 
         input[type="checkbox"] {
             -webkit-appearance: none;

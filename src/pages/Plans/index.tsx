@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import { useUserContext } from '../../shared/hooks';
-import PlanCard from '../../components/ui/PlanCard';
 import { PLANS_ENDPOINT, plans as planLists } from '../../shared/constants';
+import { List, PlanType } from '../../shared/interfaces';
+import PlanCard from '../../components/ui/PlanCard';
+import PlanTypeCard from '../../components/ui/PlanTypeCard';
 
 import './Plans.scss'
-import PlanTypeCard from '../../components/ui/PlanTypeCard';
-import { useNavigate } from 'react-router-dom';
-import { List, PlanType } from '../../shared/interfaces';
 
 const Plans = () => {
 
@@ -17,23 +18,24 @@ const Plans = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (user) {
-        const response = await fetch(PLANS_ENDPOINT);
-        const { list: plans }: PlanType = await response.json();
+      const response = await fetch(PLANS_ENDPOINT);
+      const { list: plans }: PlanType = await response.json();
 
 
-        const [day, month, year] = user.birthDay.split('-').map(Number);
-        const birthDate = new Date(year, month - 1, day);
-        const today = new Date();
-        const age = today.getFullYear() - birthDate.getFullYear();
+      const [day, month, year] = user.birthDay.split('-').map(Number);
+      const birthDate = new Date(year, month - 1, day);
+      const today = new Date();
+      const age = today.getFullYear() - birthDate.getFullYear();
 
-        const filteredPlans = plans.filter((plan) => age <= plan.age)
+      const filteredPlans = plans.filter((plan) => age <= plan.age)
 
-        setPlans(filteredPlans);
-      }
+      setPlans(filteredPlans);
     }
 
-    fetchData();
+    if (user) fetchData();
+    else {
+      navigate('/')
+    }
   }, []);
 
   const handlePlanSelected = (plan: number) => {
@@ -46,21 +48,21 @@ const Plans = () => {
 
   return (
     <section className="plans">
-      <div className="breadcrum">
-
+      <div className="breadcrumb">
       </div>
       <div className="plans-container">
         <div className="arrow">
           <button onClick={goBack}>Volver</button>
         </div>
         <div className="plans-cards">
-          <h1>{ user.name } ¿Para quién deseas cotizar?</h1>
+          <h1>{user?.name} ¿Para quién deseas cotizar?</h1>
           <p>Selecciona la opción que se ajuste más a tus necesidades.</p>
           <div className='plans-cards-container'>
             {planLists.map((plan) => (
               <PlanCard key={plan.value} value={plan.value} handlePlanSelected={handlePlanSelected} isSelected={planSelected === plan.value}>
-                <h4>{ plan.title }</h4>
-                <p>{ plan.description }</p>
+                <img className='card-image' src={plan.image} alt="person" />
+                <h4 className='card-title'>{plan.title}</h4>
+                <p className='card-description'>{plan.description}</p>
               </PlanCard>
             ))}
           </div>

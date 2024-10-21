@@ -1,8 +1,8 @@
 import './PlanCard.scss'
 interface PlanCardProps {
   children: React.ReactNode; 
-  value: any; // Define el tipo de la prop 'value'
-  handlePlanSelected: (plan: any) => void; // Define el tipo de la prop 'handlePlanSelected'
+  value: any;
+  handlePlanSelected: (plan: any) => void;
   isSelected: boolean; 
 }
 

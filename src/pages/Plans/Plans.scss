@@ -2,12 +2,19 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    max-width: 900px;
-    margin: 60px auto;
     box-sizing: border-box;
+    background-color: white;
+
+    .breadcrumb {
+        background-color: #EDEFFC;
+        height: 40px;
+    }
 
     &-container {
-        
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 40px;
+        box-sizing: border-box;
 
         .arrow {
             display: flex;
@@ -35,7 +42,22 @@
     &-cards-container {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 32px;
+
+        .card-image {
+            display: flex;
+            width: 50px;
+        }
+
+        .card-title {
+            text-align: left;
+        }
+
+        .card-description {
+            text-align: left;
+            font-size: 12px;
+        }
     }
 
     &-cards-types {
@@ -43,7 +65,29 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 20px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .plans {
+
+        .plans-container {
+
+            .plans-cards {
+
+                h1 {
+                    text-align: left;
+                }
+                p {
+                    text-align: left;
+                }
+            }
+        }
+
     }
 
 }

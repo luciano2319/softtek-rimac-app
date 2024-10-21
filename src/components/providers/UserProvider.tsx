@@ -3,11 +3,11 @@ import { User } from '../../shared/interfaces';
 import { UserContext } from '../../shared/hooks';
 
 interface UserProviderProps {
-  children: React.ReactNode; // Define the type of the 'children' prop
+  children: React.ReactNode;
 }
 
 const UserProvider = ({ children }: UserProviderProps) => {
-  const [user, setUser] = useState<User>(); // Inicializa el estado del usuario
+  const [user, setUser] = useState<User>();
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
