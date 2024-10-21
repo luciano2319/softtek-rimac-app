@@ -3,7 +3,8 @@ import { DocumentTypes } from '../enums';
 
 export const userSchema = yup.object({
     documentType: yup
-        .string(),
+        .string()
+        .required(),
     cellphone: yup
         .string()
         .matches(/^\+?\d+$/, 'El celular solo debe contener números y el símbolo +')
@@ -25,4 +26,7 @@ export const userSchema = yup.object({
         .boolean()
         .required('Debe leer y aceptar las políticas de privacidad')
         .oneOf([true], 'Debe leer y aceptar las políticas de privacidad'),
+    checkComercialPolicies: yup
+        .boolean()
+        .required(),
 });

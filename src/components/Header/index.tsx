@@ -1,4 +1,3 @@
-import React from 'react'
 import PhoneIcon from '@mui/icons-material/Phone'
 
 import logo from '../../assets/logo-rimac.svg'

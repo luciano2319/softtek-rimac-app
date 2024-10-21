@@ -1,4 +1,4 @@
-export const planTypes = [
+export const plans = [
     {
         value: 1,
         title:  'Para mí',

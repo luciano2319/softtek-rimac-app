@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { User } from '../../shared/interfaces';
 import { UserContext } from '../../shared/hooks';
 
-const UserProvider = ({ children }) => {
+interface UserProviderProps {
+  children: React.ReactNode; // Define the type of the 'children' prop
+}
+
+const UserProvider = ({ children }: UserProviderProps) => {
   const [user, setUser] = useState<User>(); // Inicializa el estado del usuario
 
   return (

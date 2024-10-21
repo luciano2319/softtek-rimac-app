@@ -1,5 +1,3 @@
-import React from 'react'
-
 import logo from '../../assets/logo-rimac-white.svg';
 import './Footer.scss'
 
