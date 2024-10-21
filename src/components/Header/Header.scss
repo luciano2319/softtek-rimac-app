@@ -22,8 +22,45 @@ header {
             align-items: center;
             
             .sales {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
                 text-align: center;
+
+                &-text {
+                    display: block;
+                }
+
+                &-phone {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
             }
+        }
+    }
+}
+@media (max-width: 768px) {
+    header {
+        padding: 0 10px ;
+
+        .header-container {
+
+            .logo {
+                width: 70px;
+            }
+
+            .contact {
+
+                .sales {
+
+                    &-text {
+                        display: none;
+                    }
+                }
+            }
+
         }
     }
 }

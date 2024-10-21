@@ -14,7 +14,7 @@ const FormInputDropdown = ({ name, control, sx, options }: FormInputDropdownProp
             control={control}
             render={(renderProps) => (
                 <FormControl
-                    sx={{ minWidth: 200 }}
+                    sx={{ minWidth: 120 }}
                 >
                     <Select
                         onChange={renderProps.field.onChange}

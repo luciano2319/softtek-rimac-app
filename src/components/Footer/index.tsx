@@ -6,8 +6,9 @@ import './Footer.scss'
 const Footer = () => {
   return (
     <footer className='footer'>
-      <div className='container'>
+      <div className='footer-container'>
         <img src={logo} />
+        <hr/>
         <div className='copyright'>
           <p>&copy; 2023 RIMAC Seguros y Reaseguros.</p>
         </div>

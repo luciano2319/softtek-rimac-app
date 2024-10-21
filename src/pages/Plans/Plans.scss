@@ -1,0 +1,49 @@
+.plans {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 900px;
+    margin: 60px auto;
+    box-sizing: border-box;
+
+    &-container {
+        
+
+        .arrow {
+            display: flex;
+            justify-content: flex-start;
+
+            button {
+                border: none;
+                background: none;
+                font: inherit;
+                color: #4F4FFF;
+                cursor: pointer;
+                font-weight: 600;
+            }
+
+            button::before {
+                content: "← ";
+                font-weight: 600;
+                padding: 5px;
+                font: inherit;
+                color: #4F4FFF;
+            }
+        }
+    }
+
+    &-cards-container {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+    }
+
+    &-cards-types {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+}

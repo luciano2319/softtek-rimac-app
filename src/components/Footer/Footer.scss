@@ -1,7 +1,4 @@
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
     background-color: #222;
     color: #fff;
     padding: 20px 60px;
@@ -9,12 +6,16 @@
     width: 100%;
     box-sizing: border-box;
 
-    .container {
+    &-container {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+
+        hr {
+            display: none;
+        }
     
         .copyright {
             font-size: 14px;
@@ -22,6 +23,28 @@
 
         img {
             width: 98px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+
+        &-container {
+            flex-direction: column;
+            gap: 10px;
+
+            hr {
+                display: block;
+                width: 100%;
+                border: none;
+                height: 1px;
+                background-color: #333;
+            }
+
+            img {
+                width: 70px;
+            }
         }
     }
 }

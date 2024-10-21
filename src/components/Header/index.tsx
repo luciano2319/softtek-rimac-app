@@ -11,7 +11,10 @@ const Header = () => {
         <div className='header-container'>
           <img className='logo' src={logo} alt='logo' />
           <div className='contact'>
-            <p className='sales'>¡Compra por este medio! <span><PhoneIcon /> <strong>(01) 411 6001</strong></span></p>
+            <p className='sales'>
+              <span className='sales-text'>¡Compra por este medio!</span>
+              <div className='sales-phone'><PhoneIcon /><strong>(01) 411 6001</strong></div>
+            </p>
           </div>
         </div>
     </header>

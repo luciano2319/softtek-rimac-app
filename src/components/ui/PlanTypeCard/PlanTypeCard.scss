@@ -1,0 +1,60 @@
+.plan-type-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0px 0px 32px 0px rgba(174,172,243,0.23);
+    width: 260px;
+    
+    border: none;
+    font: inherit;
+    cursor: pointer;
+
+    &--header {
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &--price {
+
+        display: flex;
+        flex-direction: column;
+
+        .subtitle {
+            color: #7981B2;
+            font-size: 12px;
+            font-weight: 800;
+            text-align: left;
+        }
+
+        .price {
+            text-align: left;
+        }
+        
+    }
+
+    &--button {
+        background-color: #FF1C44;
+        border-radius: 50px;
+        border: none;
+        padding: 15px;
+        color: white;
+        font: inherit;
+    }
+
+    hr {
+        margin: 20px 0;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        li {
+            text-align: left;
+        }
+    }
+
+}
